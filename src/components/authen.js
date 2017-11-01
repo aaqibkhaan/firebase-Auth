@@ -17,13 +17,33 @@ var firebase = require('firebase');
 
 class Authen extends Component {
 
+	login(event){
+		const email = this.refs.email.value;
+		const password = this.refs.password.value;
+		console.log(email, password);
+
+	}
+
+	constructor(props) {
+
+		super(props);
+		this.state = {
+
+
+		};
+		this.login = this.login.bind(this);
+	}
 
 	render() {
 
 		return (
 			<div> 
 				<input id="email" type="email" placeholder="Enter your email" ref="email"/> <br />
-				<input id="pass" type="password" placeholder="Enter your Password" ref="password"/> <br />
+				<input id="password" type="password" placeholder="Enter your Password" ref="password"/> <br />
+
+				<button onClick={this.login}> Log In </button>
+				<button> Sing Up </button>
+				<button> Log Out</button>
 
 			</div>);
 	}
