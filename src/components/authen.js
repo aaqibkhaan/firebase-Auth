@@ -22,13 +22,24 @@ class Authen extends Component {
 		const password = this.refs.password.value;
 		console.log(email, password);
 
+		const auth = firebase.auth();
+
+		
+		const promise = auth.signInWithEmailAndPassword(email, password);
+		
+		promise.catch(e => {
+			var errorMessage = e.message;
+			console.log(errorMessage);
+			this.setState({errorMessage});
+		});
+
 	}
 
 	constructor(props) {
 
 		super(props);
 		this.state = {
-
+			errorMessage : ''
 
 		};
 		this.login = this.login.bind(this);
@@ -41,6 +52,7 @@ class Authen extends Component {
 				<input id="email" type="email" placeholder="Enter your email" ref="email"/> <br />
 				<input id="password" type="password" placeholder="Enter your Password" ref="password"/> <br />
 
+				<p>{this.state.errorMessage} </p>
 				<button onClick={this.login}> Log In </button>
 				<button> Sing Up </button>
 				<button> Log Out</button>
