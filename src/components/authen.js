@@ -4,7 +4,7 @@ var firebase = require('firebase');
 
 // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDF1x3ItqP0_UxVshNE_3mivar_J8o3Bgc",
+    apiKey: "xxxx_xxxxx_xxxxxxx",
     authDomain: "fir-auth-453.firebaseapp.com",
     databaseURL: "https://fir-auth-453.firebaseio.com",
     projectId: "fir-auth-453",
